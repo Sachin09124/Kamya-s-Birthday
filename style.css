@@ -1,0 +1,977 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fad0c4,#fbc2eb);
+}
+
+.container{
+width:380px;
+background:white;
+padding:30px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+z-index:5;
+animation:pop 1s ease;
+}
+
+@keyframes pop{
+0%{
+opacity:0;
+transform:scale(.5);
+}
+100%{
+opacity:1;
+transform:scale(1);
+}
+}
+
+.title{
+font-size:34px;
+color:#ff4081;
+margin-bottom:15px;
+}
+
+.name{
+font-size:30px;
+color:#d81b60;
+margin-bottom:20px;
+}
+
+.welcome{
+font-size:18px;
+line-height:1.7;
+margin-bottom:25px;
+}
+
+button{
+padding:14px 30px;
+font-size:20px;
+border:none;
+border-radius:30px;
+background:#ff4081;
+color:white;
+cursor:pointer;
+transition:.4s;
+}
+
+button:hover{
+transform:scale(1.1);
+background:#e91e63;
+}
+
+.heart{
+position:absolute;
+font-size:25px;
+animation:float 7s linear infinite;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+/* ---------- Birthday Scene ---------- */
+
+#birthdayScene{
+
+height:100vh;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb);
+
+animation:fadeScene 1.5s;
+
+}
+
+@keyframes fadeScene{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
+
+.surpriseTitle{
+
+font-size:45px;
+
+color:#e91e63;
+
+margin-bottom:40px;
+
+animation:bounce 2s infinite;
+
+}
+
+@keyframes bounce{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+.cake{
+
+position:relative;
+
+width:220px;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+animation:popCake 2s;
+
+}
+
+@keyframes popCake{
+
+0%{
+
+transform:scale(.3);
+
+opacity:0;
+
+}
+
+100%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+.cakeBottom{
+
+width:220px;
+
+height:70px;
+
+background:#ff69b4;
+
+border-radius:0 0 20px 20px;
+
+}
+
+.cakeMiddle{
+
+width:190px;
+
+height:60px;
+
+background:#ff85c2;
+
+margin-bottom:5px;
+
+border-radius:15px;
+
+}
+
+.cakeTop{
+
+width:160px;
+
+height:50px;
+
+background:#ffb6d9;
+
+margin-bottom:5px;
+
+border-radius:15px;
+
+}
+
+.cakeText{
+
+margin-top:30px;
+
+font-size:28px;
+
+color:#d81b60;
+
+animation:glow 2s infinite;
+
+}
+
+@keyframes glow{
+
+0%{
+
+text-shadow:0 0 5px pink;
+
+}
+
+50%{
+
+text-shadow:0 0 30px hotpink;
+
+}
+
+100%{
+
+text-shadow:0 0 5px pink;
+
+}
+
+}
+
+.candles{
+
+display:flex;
+
+gap:28px;
+
+margin-bottom:5px;
+
+}
+
+.candle{
+
+width:12px;
+
+height:45px;
+
+background:white;
+
+border-radius:5px;
+
+}
+/* ===== Part 2B ===== */
+
+/* Candle flame */
+.candle{
+    position:relative;
+    width:12px;
+    height:45px;
+    background:white;
+    border-radius:5px;
+}
+
+.flame{
+    position:absolute;
+    width:14px;
+    height:22px;
+    background:gold;
+    border-radius:50% 50% 50% 50%;
+    top:-22px;
+    left:-1px;
+    opacity:0;
+    box-shadow:0 0 15px yellow;
+}
+
+.flame.show{
+    animation:flicker .5s infinite alternate;
+    opacity:1;
+}
+
+@keyframes flicker{
+    from{
+        transform:scale(1);
+        background:orange;
+    }
+    to{
+        transform:scale(1.15);
+        background:yellow;
+    }
+}
+
+/* Sparkles */
+
+.sparkle{
+    position:absolute;
+    color:white;
+    font-size:22px;
+    animation:twinkle 2s infinite;
+}
+
+@keyframes twinkle{
+
+0%{opacity:0;transform:scale(.5);}
+50%{opacity:1;transform:scale(1.3);}
+100%{opacity:0;transform:scale(.5);}
+
+}
+
+/* Confetti */
+
+.confetti{
+position:absolute;
+width:10px;
+height:10px;
+animation:fall 4s linear forwards;
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-100px) rotate(0deg);
+}
+
+100%{
+transform:translateY(900px) rotate(720deg);
+}
+
+}
+/* ========================= */
+/* Birthday Scene */
+/* ========================= */
+
+#birthdayScene{
+display:none;
+height:100vh;
+width:100%;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb);
+position:absolute;
+top:0;
+left:0;
+}
+
+.surpriseTitle{
+font-size:40px;
+color:#ff1493;
+margin-bottom:30px;
+animation:bounce 2s infinite;
+}
+
+@keyframes bounce{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-10px);
+}
+}
+
+.cake{
+display:flex;
+flex-direction:column;
+align-items:center;
+margin-top:20px;
+}
+
+.candles{
+display:flex;
+gap:25px;
+margin-bottom:5px;
+}
+
+.candle{
+width:12px;
+height:45px;
+background:white;
+border-radius:5px;
+position:relative;
+}
+
+.flame{
+width:14px;
+height:20px;
+background:gold;
+border-radius:50%;
+position:absolute;
+top:-20px;
+left:-1px;
+display:none;
+box-shadow:0 0 15px yellow;
+}
+
+.cakeTop{
+width:160px;
+height:45px;
+background:#ffc0cb;
+border-radius:15px;
+margin-bottom:5px;
+}
+
+.cakeMiddle{
+width:190px;
+height:55px;
+background:#ff69b4;
+border-radius:15px;
+margin-bottom:5px;
+}
+
+.cakeBottom{
+width:220px;
+height:70px;
+background:#ff1493;
+border-radius:0 0 20px 20px;
+}
+
+.cakeText{
+margin-top:25px;
+font-size:24px;
+color:#d81b60;
+}
+
+#blowBtn{
+margin-top:25px;
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:25px;
+background:#ff4081;
+color:white;
+cursor:pointer;
+display:none;
+}
+
+#blowBtn:hover{
+background:#e91e63;
+}
+/* ===== Part 2C ===== */
+
+.smoke{
+position:absolute;
+font-size:30px;
+animation:smokeUp 3s linear forwards;
+pointer-events:none;
+}
+
+@keyframes smokeUp{
+
+0%{
+opacity:1;
+transform:translateY(0);
+}
+
+100%{
+opacity:0;
+transform:translateY(-120px);
+}
+
+}
+
+.balloon{
+
+position:absolute;
+
+font-size:45px;
+
+animation:flyBalloon 8s linear forwards;
+
+pointer-events:none;
+
+}
+
+@keyframes flyBalloon{
+
+0%{
+transform:translateY(100vh);
+}
+
+100%{
+transform:translateY(-120vh);
+}
+
+}
+/* ===== Part 3A ===== */
+
+#giftContainer{
+
+display:none;
+
+flex-direction:column;
+
+align-items:center;
+
+margin-top:30px;
+
+}
+
+#giftBox{
+
+font-size:90px;
+
+cursor:pointer;
+
+animation:giftBounce 1s infinite;
+
+transition:.5s;
+
+}
+
+@keyframes giftBounce{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+}
+
+#heartGift{
+
+font-size:70px;
+
+opacity:0;
+
+margin-top:10px;
+
+animation:none;
+
+}
+
+@keyframes heartPop{
+
+0%{
+
+transform:scale(.2);
+
+opacity:0;
+
+}
+
+50%{
+
+transform:scale(1.4);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+
+.flower{
+
+position:absolute;
+
+font-size:28px;
+
+animation:flowerFall 6s linear forwards;
+
+pointer-events:none;
+
+}
+
+@keyframes flowerFall{
+
+0%{
+
+transform:translateY(-100px);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(100vh);
+
+opacity:0;
+
+}
+
+}
+
+.star{
+
+position:absolute;
+
+font-size:20px;
+
+animation:starBlink 2s infinite;
+
+}
+
+@keyframes starBlink{
+
+0%{
+
+opacity:.2;
+
+}
+
+50%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:.2;
+
+}
+
+}
+/* ===== Part 3B ===== */
+
+#messageBox{
+
+display:none;
+
+margin-top:30px;
+
+width:85%;
+
+max-width:700px;
+
+padding:20px;
+
+border-radius:20px;
+
+background:rgba(255,255,255,.85);
+
+text-align:center;
+
+box-shadow:0 0 25px rgba(255,105,180,.6);
+
+}
+
+#typewriter{
+
+font-size:26px;
+
+line-height:1.7;
+
+color:#d81b60;
+
+font-weight:bold;
+
+text-shadow:0 0 10px pink;
+
+}
+/* ===== Part 4A ===== */
+
+#finalScreen{
+
+display:none;
+
+margin-top:40px;
+
+text-align:center;
+
+animation:zoomIn 2s ease;
+
+}
+
+#finalTitle{
+
+font-size:55px;
+
+color:#ff1493;
+
+text-shadow:
+0 0 10px pink,
+0 0 20px hotpink,
+0 0 40px deeppink;
+
+animation:pulse 2s infinite;
+
+}
+
+#finalEmoji{
+
+font-size:40px;
+
+margin-top:20px;
+
+animation:bounceEmoji 1s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+@keyframes bounceEmoji{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+}
+
+@keyframes zoomIn{
+
+0%{
+opacity:0;
+transform:scale(.4);
+}
+
+100%{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+.firework{
+
+position:absolute;
+
+font-size:40px;
+
+animation:explode 2s linear forwards;
+
+pointer-events:none;
+
+}
+
+@keyframes explode{
+
+0%{
+transform:scale(.2);
+opacity:1;
+}
+
+100%{
+transform:scale(2.5);
+opacity:0;
+}
+}
+/* ===== Part 4B ===== */
+
+#magicScene{
+margin-top:30px;
+position:relative;
+width:100%;
+height:220px;
+}
+
+#moon{
+font-size:70px;
+position:absolute;
+top:10px;
+right:60px;
+animation:moonGlow 3s infinite;
+}
+
+@keyframes moonGlow{
+
+0%{
+filter:drop-shadow(0 0 5px white);
+}
+
+50%{
+filter:drop-shadow(0 0 30px yellow);
+}
+
+100%{
+filter:drop-shadow(0 0 5px white);
+}
+
+}
+
+#bigHeart{
+
+font-size:90px;
+
+animation:heartBeat 1s infinite;
+
+}
+
+@keyframes heartBeat{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.25);
+
+}
+
+}
+
+#clouds{
+
+font-size:45px;
+
+position:absolute;
+
+bottom:10px;
+
+left:-300px;
+
+animation:cloudMove 15s linear infinite;
+
+}
+
+@keyframes cloudMove{
+
+from{
+
+left:-300px;
+
+}
+
+to{
+
+left:110%;
+
+}
+
+}
+
+.rose{
+
+position:absolute;
+
+font-size:30px;
+
+animation:roseFall 7s linear forwards;
+
+}
+
+@keyframes roseFall{
+
+0%{
+
+transform:translateY(-120px);
+
+}
+
+100%{
+
+transform:translateY(100vh);
+
+}
+
+}
+/* ===== Part 5A ===== */
+
+#replayBtn{
+
+margin-top:25px;
+
+padding:15px 35px;
+
+font-size:20px;
+
+border:none;
+
+border-radius:30px;
+
+background:#ff1493;
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+#replayBtn:hover{
+
+transform:scale(1.08);
+
+background:#e91e63;
+
+}
+
+.floatingHeart{
+
+position:absolute;
+
+font-size:28px;
+
+animation:heartFloat 5s linear forwards;
+
+pointer-events:none;
+
+}
+
+@keyframes heartFloat{
+
+0%{
+
+transform:translateY(100vh) scale(.5);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh) scale(1.5);
+
+opacity:0;
+
+}
+
+}
