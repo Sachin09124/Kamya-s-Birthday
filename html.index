@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Kamya 💗</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="hearts"></div>
+
+<!-- Welcome Screen -->
+
+<div id="welcomeScreen" class="container">
+
+<h1 class="title">🎉 Happy Birthday 🎉</h1>
+
+<h2 class="name">Kamya ❤️</h2>
+
+<p class="welcome">
+Today is all about celebrating the most wonderful sister.
+May your day be filled with love, laughter and happiness.
+</p>
+
+<button id="openBtn">
+🎁 Open Surprise
+</button>
+
+</div>
+
+<!-- Birthday Scene -->
+
+<div id="birthdayScene">
+
+<h1 class="surpriseTitle">
+🎂 Happy Birthday Kamya 🎂
+</h1>
+
+<div class="cake">
+
+<div class="candles">
+
+<div class="candle">
+<div class="flame" id="f1"></div>
+</div>
+
+<div class="candle">
+<div class="flame" id="f2"></div>
+</div>
+
+<div class="candle">
+<div class="flame" id="f3"></div>
+</div>
+
+</div>
+
+<div class="cakeTop"></div>
+
+<div class="cakeMiddle"></div>
+
+<div class="cakeBottom"></div>
+
+</div>
+
+<h2 class="cakeText">
+A Special Cake Just For You ❤️
+</h2>
+
+<button id="blowBtn">
+🕯️ Blow Candles
+</button>
+<div id="giftContainer">
+
+    <div id="giftBox">🎁</div>
+
+    <div id="heartGift">💖</div>
+
+</div>
+<div id="messageBox">
+
+<h2 id="typewriter"></h2>
+
+</div>
+<div id="finalScreen">
+
+<h1 id="finalTitle">
+🎉 HAPPY BIRTHDAY KAMYA 💗
+</h1>
+
+<p id="finalEmoji">
+🥳🎂🎁🎈💖✨🌸🎊
+</p>
+<div id="magicScene">
+
+<div id="moon">🌙</div>
+
+<div id="bigHeart">💖</div>
+
+<div id="clouds">
+☁️ ☁️ ☁️
+</div>
+
+</div>
+<audio id="birthdayMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button id="replayBtn">
+    🔄 Replay Surprise
+</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
